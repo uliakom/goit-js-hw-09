@@ -4,12 +4,13 @@ const refs = {
     startBtn: document.querySelector('[data-start]'),
     stopBtn: document.querySelector('[data-stop]')
 };
+const COLOR_INTERVAL = 1000;
 
 refs.startBtn.addEventListener('click', onStartBtnClick);
 refs.stopBtn.addEventListener('click', onStopBtnClick);
 
 function onStartBtnClick() {
-  timeoutId = setInterval(changeBackgroundColor, 1000);
+  timeoutId = setInterval(changeBackgroundColor, COLOR_INTERVAL);
   refs.startBtn.setAttribute('disabled', '');
   refs.stopBtn.toggleAttribute('disabled', '');
 }
