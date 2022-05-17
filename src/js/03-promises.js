@@ -23,10 +23,10 @@ function onSubmitFormData(event) {
   let step = Number(event.currentTarget.step.value);
   let amount = Number(event.currentTarget.amount.value);
   for (let i = 1; i <= amount; i += 1){
-    delay += step;
     createPromise(i, delay)
       .then(success => console.log('✅ Fulfilled promise'))
       .catch(error => console.log('❌ Rejected promise')); 
+    delay += step;
   } 
 };
 
